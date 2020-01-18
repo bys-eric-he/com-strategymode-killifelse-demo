@@ -1,5 +1,6 @@
 package com.example.strategymode.killifelse.demo.util;
 
+import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.beans.factory.BeanDefinitionStoreException;
 import org.springframework.context.ResourceLoaderAware;
 import org.springframework.core.io.Resource;
@@ -40,7 +41,7 @@ public class ClassScaner implements ResourceLoaderAware {
     private static Set<Class<?>> scan(String[] basePackages, Class<? extends Annotation>... annotations) {
         ClassScaner cs = new ClassScaner();
 
-        if (annotations != null && annotations.length > 0) {
+        if (ArrayUtils.isNotEmpty(annotations)) {
             for (Class anno : annotations) {
                 cs.addIncludeFilter(new AnnotationTypeFilter(anno));
             }
