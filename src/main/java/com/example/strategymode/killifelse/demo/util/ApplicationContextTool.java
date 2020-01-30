@@ -6,10 +6,8 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 /**
- * @descrption Bean工具类<br>
- * 在非spring管理的类中获取spring注册的bean
- *
  * @author Eric.He
+ * @descrption Bean工具类, 在非spring管理的类中获取spring注册的bean
  * @date Created in 19:55 2020/01/17
  */
 @Component

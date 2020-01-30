@@ -11,7 +11,7 @@ import java.util.Map;
 
 /**
  * @Author: Eric.He
- * @Description:
+ * @Description: Handler处理器, 将指定包路径下的Handler Class类扫描并创建实例到容器.
  * @Date: Created in 19:40 2020/01/17
  */
 @Component
@@ -35,6 +35,7 @@ public class HandlerProcessor implements BeanFactoryPostProcessor {
         });
         HandlerContext context = new HandlerContext(handlerMap);
         beanFactory.registerSingleton(HandlerContext.class.getName(), context);
+
     }
 
 }

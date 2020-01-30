@@ -26,7 +26,7 @@ import java.util.Set;
 
 /**
  * @Author: Eric.He
- * @Description:
+ * @Description: Java类扫描器，用于获取指定包下的Class类，同时可根据指定Annotation进行过滤。
  * @Date: Created in 20:35 2020/01/17
  */
 public class ClassScaner implements ResourceLoaderAware {
@@ -64,6 +64,12 @@ public class ClassScaner implements ResourceLoaderAware {
         return this.resourcePatternResolver;
     }
 
+    /**
+     * ResourceLoaderAware回调接口负责将ResourceLoader对象注入到当前的受管Bean实例中，其定义如下。
+     * 当受管Bean获得ResourceLoader对象后，将ApplicationContext的ResourceLoader注入进去。
+     * 之后对它getResource()，就可以获取到系统的Resource了。
+     * @param resourceLoader
+     */
     @Override
     public void setResourceLoader(ResourceLoader resourceLoader) {
         this.resourcePatternResolver = ResourcePatternUtils
